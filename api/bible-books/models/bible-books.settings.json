@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "bible_books",
+  "info": {
+    "name": "Bible books",
+    "description": "Księgi biblijne wyświetlane w aplikacji",
+    "displayName": "Księgi biblijne"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "testament": {
+      "type": "enumeration",
+      "enum": [
+        "Stary",
+        "Nowy"
+      ],
+      "required": true
+    },
+    "siglum": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "chapters": {
+      "via": "bible_book",
+      "collection": "chapters"
+    }
+  }
+}

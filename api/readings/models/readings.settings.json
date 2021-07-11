@@ -1,0 +1,41 @@
+{
+  "kind": "collectionType",
+  "collectionName": "readings",
+  "info": {
+    "name": "Readings",
+    "displayName": "Czytania"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "reading_type": {
+      "via": "readings",
+      "model": "reading-types"
+    },
+    "visible_from": {
+      "type": "datetime"
+    },
+    "visible_to": {
+      "type": "datetime"
+    },
+    "content": {
+      "type": "richtext"
+    },
+    "sections": {
+      "via": "readings",
+      "collection": "sections"
+    },
+    "curiosities": {
+      "via": "readings",
+      "collection": "curiosities"
+    },
+    "photos": {
+      "via": "readings",
+      "collection": "photos"
+    }
+  }
+}

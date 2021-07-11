@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/reading-types",
+      "handler": "reading-types.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/reading-types/count",
+      "handler": "reading-types.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/reading-types/:id",
+      "handler": "reading-types.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/reading-types",
+      "handler": "reading-types.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/reading-types/:id",
+      "handler": "reading-types.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/reading-types/:id",
+      "handler": "reading-types.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

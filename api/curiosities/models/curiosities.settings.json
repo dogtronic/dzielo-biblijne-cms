@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "curiosities",
+  "info": {
+    "name": "Curiosities",
+    "description": "",
+    "displayName": "Ciekawostki"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "image": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "comment": {
+      "type": "text",
+      "required": true
+    },
+    "is_visible_on_dashboard": {
+      "type": "boolean",
+      "default": false
+    },
+    "readings": {
+      "collection": "readings",
+      "via": "curiosities",
+      "dominant": true
+    }
+  }
+}

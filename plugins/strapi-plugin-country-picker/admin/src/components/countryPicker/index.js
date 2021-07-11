@@ -1,0 +1,38 @@
+import React, { useState} from 'react';
+import Select from 'react-select';
+import {countries} from '../../utils/countries';
+
+const CountryPicker = (props) => {
+  const options = countries.map(v => ({
+    value: v.alpha2,
+    label: v.country,
+  }))
+ 
+  return (
+    <div>
+      <label>{props.label}</label>
+      <Select
+        options={options}
+        value={options.find(v => v.value === props.value)}
+        onChange={(v) => {
+          props.onChange({
+            target: {
+              value: v.value,
+              name: props.name,
+              type: props.type
+            }
+          });
+        }}
+        menuPortalTarget={document.body} 
+        styles={{ 
+          menuPortal: base => ({ ...base, zIndex: 9999 }),
+          control: base => ({...base,  border: '1px solid #E3E9F3', height: '3.4rem' })
+        }}
+        
+      />
+    </div>
+  );
+};
+
+export default CountryPicker;
+  

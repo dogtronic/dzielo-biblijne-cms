@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "terms",
+  "info": {
+    "name": "Terms",
+    "description": "",
+    "displayName": "Terminy"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "term": {
+      "type": "string",
+      "unique": true,
+      "required": true
+    },
+    "description": {
+      "type": "richtext"
+    }
+  }
+}

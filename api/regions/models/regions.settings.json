@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "regions",
+  "info": {
+    "name": "Regions",
+    "displayName": "Regiony"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "country": {
+      "type": "countrypicker"
+    },
+    "position": {
+      "type": "mappicker"
+    }
+  }
+}

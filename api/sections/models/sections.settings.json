@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "sections",
+  "info": {
+    "name": "Sections",
+    "displayName": "Sekcje",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "section_type": {
+      "model": "section-type"
+    },
+    "content": {
+      "type": "richtext"
+    },
+    "readings": {
+      "collection": "readings",
+      "via": "sections",
+      "dominant": true
+    }
+  }
+}

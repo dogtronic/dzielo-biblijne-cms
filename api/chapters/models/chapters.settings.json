@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "chapters",
+  "info": {
+    "name": "Chapters",
+    "description": "Rozdziały ksiąg",
+    "displayName": "Rozdziały"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "number": {
+      "type": "integer",
+      "min": 1,
+      "required": true
+    },
+    "title": {
+      "type": "string"
+    },
+    "text": {
+      "type": "richtext"
+    },
+    "bible_book": {
+      "via": "chapters",
+      "model": "bible-books"
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "kind": "collectionType",
+  "collectionName": "section_types",
+  "info": {
+    "name": "SectionType",
+    "description": "",
+    "displayName": "Typy sekcji"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    }
+  }
+}

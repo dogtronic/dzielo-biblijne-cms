@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "photos",
+  "info": {
+    "name": "Photos",
+    "description": "",
+    "displayName": "Zdjęcia"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "image": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": true,
+      "pluginOptions": {}
+    },
+    "comment": {
+      "type": "text"
+    },
+    "is_visible_on_dashboard": {
+      "type": "boolean",
+      "default": false
+    },
+    "readings": {
+      "collection": "readings",
+      "via": "photos",
+      "dominant": true
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "reading_types",
+  "info": {
+    "name": "ReadingTypes",
+    "description": "",
+    "displayName": "Typy czytań"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "readings": {
+      "via": "reading_type",
+      "collection": "readings"
+    }
+  }
+}

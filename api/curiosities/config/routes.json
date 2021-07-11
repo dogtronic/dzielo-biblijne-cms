@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/curiosities",
+      "handler": "curiosities.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/curiosities/count",
+      "handler": "curiosities.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/curiosities/:id",
+      "handler": "curiosities.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/curiosities",
+      "handler": "curiosities.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/curiosities/:id",
+      "handler": "curiosities.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/curiosities/:id",
+      "handler": "curiosities.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}
