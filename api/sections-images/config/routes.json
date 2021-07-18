@@ -1,0 +1,28 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/sections-images",
+      "handler": "sections-images.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/sections-images",
+      "handler": "sections-images.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/sections-images",
+      "handler": "sections-images.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}
