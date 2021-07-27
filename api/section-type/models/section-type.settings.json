@@ -17,6 +17,11 @@
       "type": "string",
       "required": true,
       "unique": true
+    },
+    "sections": {
+      "private": true,
+      "via": "section_type",
+      "collection": "sections"
     }
   }
 }

@@ -13,16 +13,16 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "section_type": {
-      "model": "section-type"
-    },
     "content": {
       "type": "richtext"
     },
-    "readings": {
-      "collection": "readings",
+    "reading": {
+      "model": "readings",
+      "via": "sections"
+    },
+    "section_type": {
       "via": "sections",
-      "dominant": true
+      "model": "section-type"
     }
   }
 }

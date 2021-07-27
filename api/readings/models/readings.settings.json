@@ -3,7 +3,8 @@
   "collectionName": "readings",
   "info": {
     "name": "Readings",
-    "displayName": "Czytania"
+    "displayName": "Czytania",
+    "description": ""
   },
   "options": {
     "increments": true,
@@ -25,10 +26,6 @@
     "content": {
       "type": "richtext"
     },
-    "sections": {
-      "via": "readings",
-      "collection": "sections"
-    },
     "curiosities": {
       "via": "readings",
       "collection": "curiosities"
@@ -36,6 +33,16 @@
     "photos": {
       "via": "readings",
       "collection": "photos"
+    },
+    "description": {
+      "type": "string"
+    },
+    "sub_description": {
+      "type": "string"
+    },
+    "sections": {
+      "via": "reading",
+      "collection": "sections"
     }
   }
 }

@@ -22,7 +22,8 @@
       "type": "string"
     },
     "text": {
-      "type": "richtext"
+      "type": "richtext",
+      "private": false
     },
     "bible_book": {
       "via": "chapters",

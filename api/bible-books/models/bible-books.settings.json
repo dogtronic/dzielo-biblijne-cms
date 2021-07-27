@@ -33,6 +33,7 @@
     },
     "chapters": {
       "via": "bible_book",
+      "private": true,
       "collection": "chapters"
     }
   }

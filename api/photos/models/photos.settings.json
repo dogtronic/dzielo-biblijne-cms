@@ -31,9 +31,12 @@
       "default": false
     },
     "readings": {
-      "collection": "readings",
       "via": "photos",
+      "collection": "readings",
       "dominant": true
+    },
+    "title": {
+      "type": "string"
     }
   }
 }

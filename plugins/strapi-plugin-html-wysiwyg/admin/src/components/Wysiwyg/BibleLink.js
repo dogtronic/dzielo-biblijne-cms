@@ -28,6 +28,13 @@ const TermLink = ({ isOpen, onChange, onToggle, model }) => {
 
     getBooks();
   }, [])
+
+  const getChapters = async (bookId) => {
+    const response = await fetch(prefixFileUrlWithBackendUrl(`/chapters/?bible_book.id=${bookId}`));
+    const responseJSON = await response.json();
+    setShowChapters(responseJSON)
+  }
+
   
   const onRemove = e => {
     e.preventDefault()
@@ -69,11 +76,10 @@ const TermLink = ({ isOpen, onChange, onToggle, model }) => {
         isDisabled={selectedType === null}
         onChange={(v) => {
           setSelectedBook(v);
-          const book = books.find((w) => w.id === v.value)
-          setShowChapters(book.chapters)
+          getChapters(v.value)
         }}
       />
-</div>
+      </div>
       <div style={{marginTop: 10,}}>
         <label>Rozdział</label>
       <Select

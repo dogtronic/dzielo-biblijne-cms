@@ -21,6 +21,23 @@
     "readings": {
       "via": "reading_type",
       "collection": "readings"
+    },
+    "image": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "Glowne",
+        "Poboczne"
+      ]
     }
   }
 }

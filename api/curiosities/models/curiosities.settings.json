@@ -32,9 +32,12 @@
       "default": false
     },
     "readings": {
-      "collection": "readings",
       "via": "curiosities",
+      "collection": "readings",
       "dominant": true
+    },
+    "title": {
+      "type": "string"
     }
   }
 }
