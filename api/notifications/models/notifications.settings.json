@@ -1,9 +1,8 @@
 {
   "kind": "collectionType",
-  "collectionName": "messages",
+  "collectionName": "notifications",
   "info": {
-    "name": "Messages",
-    "displayName": "Wiadomości",
+    "name": "notifications",
     "description": ""
   },
   "options": {
@@ -13,13 +12,23 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "name": {
+    "title": {
       "type": "string",
       "required": true
     },
     "content": {
       "type": "text",
       "required": true
+    },
+    "visible_on_dashboard": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "view": {
+      "type": "integer",
+      "default": 0,
+      "private": true
     }
   }
 }

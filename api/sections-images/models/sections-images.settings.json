@@ -132,6 +132,16 @@
       "plugin": "upload",
       "required": false,
       "pluginOptions": {}
+    },
+    "notifications": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
     }
   }
 }
