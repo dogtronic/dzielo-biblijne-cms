@@ -38,6 +38,10 @@
         "Glowne",
         "Poboczne"
       ]
+    },
+    "priority": {
+      "type": "integer",
+      "default": 0
     }
   }
 }

@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "bible_dictionaries",
+  "info": {
+    "name": "BibleDictionary",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "term": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "description": {
+      "type": "text"
+    }
+  }
+}

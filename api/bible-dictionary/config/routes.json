@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/bible-dictionaries",
+      "handler": "bible-dictionary.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/bible-dictionaries/count",
+      "handler": "bible-dictionary.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/bible-dictionaries/:id",
+      "handler": "bible-dictionary.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/bible-dictionaries",
+      "handler": "bible-dictionary.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/bible-dictionaries/:id",
+      "handler": "bible-dictionary.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/bible-dictionaries/:id",
+      "handler": "bible-dictionary.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}
