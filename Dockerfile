@@ -10,6 +10,7 @@ RUN yarn install
 
 COPY . ./
 
+
 RUN yarn build
 
-ENTRYPOINT yarn start
+ENTRYPOINT pm2 start server.js --no-daemon -i 5
