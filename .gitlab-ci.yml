@@ -55,4 +55,4 @@ deploy:
     - docker-compose pull
     - docker-compose up -d --force-recreate
   only:
-    - master
+    - main
