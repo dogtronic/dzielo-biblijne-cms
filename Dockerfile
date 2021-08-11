@@ -5,6 +5,8 @@ WORKDIR /src/app
 COPY ./package.json ./
 COPY ./yarn.lock ./
 
+RUN yarn global add pm2
+
 
 RUN yarn install
 
