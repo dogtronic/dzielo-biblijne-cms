@@ -30,7 +30,7 @@ export default strapi => {
     trads
   }
 
-  strapi.registerField({ type: 'wysiwyg_old', Component: WysiwygWithErrors })
+  strapi.registerField({ type: 'wysiwyg', Component: WysiwygWithErrors })
 
   return strapi.registerPlugin(plugin)
 }
