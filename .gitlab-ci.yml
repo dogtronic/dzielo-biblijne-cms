@@ -1,0 +1,58 @@
+image: docker:stable
+services:
+  - docker:dind
+
+stages:
+  - build
+  - deploy
+
+build:
+  stage: build
+  variables:
+    NODE_ENV: 'production'
+    DOCKER_DRIVER: 'overlay2'
+    DOCKER_TLS_CERTDIR: ''
+    APP_NAME: 'dzielobiblijne-api'
+  script:
+    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+    - docker pull $CI_REGISTRY_IMAGE/$APP_NAME:latest || true
+    - docker build -f Dockerfile --cache-from $CI_REGISTRY_IMAGE/$APP_NAME:latest --tag $CI_REGISTRY_IMAGE/$APP_NAME:$CI_COMMIT_SHA --tag $CI_REGISTRY_IMAGE/$APP_NAME:latest .
+    - docker push $CI_REGISTRY_IMAGE/$APP_NAME:$CI_COMMIT_SHA
+    - docker push $CI_REGISTRY_IMAGE/$APP_NAME:latest
+  only:
+    - main
+
+deploy:
+  stage: deploy
+  dependencies:
+    - build
+  tags:
+    - dev2
+  environment:
+    name: TEST
+    url: https://api.dzielobiblijne.dev2.akanza.dev/
+  variables:
+    NODE_ENV: 'production'
+    HTTP_HOST: 'api.dzielobiblijne.dev2.akanza.dev'
+    CLIENT_SLUG: 'apidzielobiblijnedev2akanzadev'
+    APP_NAME: 'dzielobiblijne-api'
+    API_PORT: 1347
+    AUTH_DB: 'dzielobiblijne'
+    DB_HOST: 'dzielobiblijne_mongodb'
+    DB_NAME: 'dzielobiblijne'
+    DB_PASSWORD: $DB_DEV_PASSWORD
+    DB_PORT: 27020
+    DB_USERNAME: 'dzielobiblijne'
+    UPLOADS_PATH: '/home/dzielobiblijne/public/uploads'
+    SMTP_HOST: 'mail.akanza.pl'
+    SMTP_PORT: 587
+    SMTP_USER: 'forge@akanza.pl'
+    SMTP_PASS: $SMTP_DEV_PASS
+    SMTP_SSL: 'true'
+    API_URL: 'https://api.dzielobiblijne.dev2.akanza.dev'
+  script:
+    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+    - docker-compose pull
+    - docker-compose up -d --force-recreate
+  only:
+    - main
