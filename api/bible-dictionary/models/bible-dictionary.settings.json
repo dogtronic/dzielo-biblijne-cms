@@ -3,7 +3,8 @@
   "collectionName": "bible_dictionaries",
   "info": {
     "name": "BibleDictionary",
-    "description": ""
+    "description": "",
+    "displayName": "Słownik biblijny"
   },
   "options": {
     "increments": true,

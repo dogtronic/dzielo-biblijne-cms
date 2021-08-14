@@ -87,7 +87,23 @@ class WysiwygWithErrors extends React.Component {
                 value={value}
               /> */}
               
-              <WysiwygEditor />
+              <WysiwygEditor
+                name={name} 
+                onChange={e => {
+                  if (!canCheck) {
+                    dispatch({
+                      type: 'SET_CHECK'
+                    })
+                  }
+
+                  dispatch({
+                    type: 'SET_ERROR',
+                    error: null
+                  })
+                  onChange(e)
+                }}
+                value={value}
+              />
 
               {!hasError && inputDescription && (
                 <Description>{inputDescription}</Description>

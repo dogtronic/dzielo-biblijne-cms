@@ -1,8 +1,20 @@
 'use strict';
+const { sanitizeEntity } = require('strapi-utils');
 
-/**
- * Read the documentation (https://strapi.io/documentation/developer-docs/latest/development/backend-customization.html#core-controllers)
- * to customize this controller
- */
+module.exports = {
+  chaptersList: async (ctx) => {
+    let entities;
 
-module.exports = {};
+    if (ctx.query._q) {
+      entities = await strapi.services.chapters.search(ctx.query);
+    } else {
+      entities = await strapi.services.chapters.find(ctx.query);
+    }
+
+    entities.forEach((v) => {
+      delete v.text;
+    })
+
+    return entities.map(entity => sanitizeEntity(entity, { model: strapi.models.chapters }));
+  }
+};

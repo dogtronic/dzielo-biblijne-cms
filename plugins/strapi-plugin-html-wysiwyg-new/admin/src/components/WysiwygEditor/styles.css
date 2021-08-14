@@ -61,6 +61,6 @@
 
 .public-DraftEditor-content {
   min-height: 300px;
-  padding: 3px;
+  padding: 0 15px;
   border: 1px solid #E3E9F3;
 }

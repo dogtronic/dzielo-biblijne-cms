@@ -3,10 +3,7 @@
     {
       "method": "GET",
       "path": "/chapters",
-      "handler": "chapters.find",
-      "config": {
-        "policies": []
-      }
+      "handler": "chapters.chaptersList"
     },
     {
       "method": "GET",

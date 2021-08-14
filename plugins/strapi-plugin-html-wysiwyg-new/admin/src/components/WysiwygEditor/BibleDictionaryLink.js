@@ -4,7 +4,7 @@ import { AsyncPaginate } from "react-select-async-paginate";
 import qs from "qs";
 import { IoCloseOutline } from "react-icons/io5";
 
-const TermLink = ({ isOpen, onChange, toggle }) => {
+const BibleDictionaryLink = ({ isOpen, onChange, toggle }) => {
   const [value, setValue] = useState(null);
 
   async function loadOptions(search, _, { page }) {
@@ -17,7 +17,7 @@ const TermLink = ({ isOpen, onChange, toggle }) => {
 
     const response = await fetch(
       prefixFileUrlWithBackendUrl(
-        `/terms/?_start=${page * 10}&_limit=10&_sort=term:ASC` +
+        `/bible-dictionaries/?_start=${page * 10}&_limit=10&_sort=term:ASC` +
           (search ? `&_where[0][term_contains]=${search}` : "")
       )
     );
@@ -43,7 +43,7 @@ const TermLink = ({ isOpen, onChange, toggle }) => {
   return (
     <div className="term-link-container">
       <p className="term-link-header-container">
-        <b>Dodaj łącze do Słowa</b>
+        <b>Dodaj łącze do Słownika Biblijnego</b>
         <span onClick={toggle} className="close-button">
           <IoCloseOutline size={25} color="gray" />
         </span>
@@ -75,5 +75,5 @@ const TermLink = ({ isOpen, onChange, toggle }) => {
   );
 };
 
-export default TermLink;
+export default BibleDictionaryLink;
 

@@ -3,10 +3,7 @@
     {
       "method": "GET",
       "path": "/bible-dictionaries",
-      "handler": "bible-dictionary.find",
-      "config": {
-        "policies": []
-      }
+      "handler": "bible-dictionary.bibleDictionaryList"
     },
     {
       "method": "GET",

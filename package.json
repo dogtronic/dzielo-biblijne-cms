@@ -61,6 +61,8 @@
     "@udecode/slate-plugins-trailing-block": "^1.0.0-alpha.25",
     "@udecode/slate-plugins-ui-fluent": "^1.0.0-alpha.25",
     "draft-js": "^0.11.7",
+    "draftjs-to-html": "^0.9.1",
+    "html-to-draftjs": "^1.5.0",
     "knex": "0.21.18",
     "leaflet": "1.7.1",
     "qs": "^6.10.1",

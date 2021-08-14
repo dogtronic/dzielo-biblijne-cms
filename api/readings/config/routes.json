@@ -3,18 +3,7 @@
     {
       "method": "GET",
       "path": "/readings",
-      "handler": "readings.find",
-      "config": {
-        "policies": []
-      }
-    },
-    {
-      "method": "GET",
-      "path": "/readings/count",
-      "handler": "readings.count",
-      "config": {
-        "policies": []
-      }
+      "handler": "readings.readingsWithoutContentList"
     },
     {
       "method": "GET",

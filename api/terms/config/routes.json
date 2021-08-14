@@ -3,10 +3,7 @@
     {
       "method": "GET",
       "path": "/terms",
-      "handler": "terms.find",
-      "config": {
-        "policies": []
-      }
+      "handler": "terms.termsList"
     },
     {
       "method": "GET",

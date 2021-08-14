@@ -18,10 +18,9 @@ module.exports = {
         success: true,
       });
     } catch (error) {
-      console.error(error);
       return ctx.send({
         success: false,
       });
     }
-}
+  }
 };

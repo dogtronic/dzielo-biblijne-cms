@@ -3,7 +3,8 @@
   "collectionName": "notifications",
   "info": {
     "name": "notifications",
-    "description": ""
+    "description": "",
+    "displayName": "Ogłoszenia"
   },
   "options": {
     "increments": true,
