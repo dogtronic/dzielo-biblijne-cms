@@ -67,6 +67,7 @@ const BibleDictionaryLink = ({ isOpen, onChange, toggle }) => {
         }}
         onClick={() => {
           onChange(value);
+          setValue(null);
         }}
       >
         Dodaj link

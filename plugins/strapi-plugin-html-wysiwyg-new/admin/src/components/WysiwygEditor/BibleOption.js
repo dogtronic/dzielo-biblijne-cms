@@ -69,7 +69,7 @@ const BibleOption = ({ editorState, onChange, config }) => {
     const entityKey = editorState
       .getCurrentContent()
       .createEntity('LINK', 'MUTABLE', {
-        url: 'term/' + value.chapter.value,
+        url: 'bible/' + value.chapter.value,
       })
       .getLastCreatedEntityKey();
 

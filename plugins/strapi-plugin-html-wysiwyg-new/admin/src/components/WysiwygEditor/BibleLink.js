@@ -119,6 +119,12 @@ const BibleLink = ({ isOpen, onChange, toggle }) => {
         }}
         onClick={() => {
           onChange({ book: selectedBook, chapter: selectedChapter, parts });
+          setShowBooks([]);
+          setShowChapters([]);
+          setSelectedType(null);
+          setSelectedBook(null);
+          setSelectedChapter(null);
+          setParts('');
         }}
       >
         Dodaj link
