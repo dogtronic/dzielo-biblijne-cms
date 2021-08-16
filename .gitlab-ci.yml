@@ -41,7 +41,7 @@ deploy:
     DB_HOST: 'dzielobiblijne_mongodb'
     DB_NAME: 'dzielobiblijne'
     DB_PASSWORD: $DB_DEV_PASSWORD
-    DB_PORT: 27017
+    DB_PORT: 27020
     DB_USERNAME: 'dzielobiblijne'
     UPLOADS_PATH: '/home/dzielobiblijne/public/uploads'
     SMTP_HOST: 'mail.akanza.pl'
