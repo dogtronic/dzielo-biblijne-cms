@@ -49,6 +49,7 @@ deploy:
     SMTP_USER: 'forge@akanza.pl'
     SMTP_PASS: $SMTP_DEV_PASS
     SMTP_SSL: 'true'
+    MONGO_ROOT_PASSWORD: $MONGO_ROOT_PASSWORD
     API_URL: 'https://api.dzielobiblijne.dev2.akanza.dev'
   script:
     - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
