@@ -5,11 +5,14 @@ WORKDIR /src/app
 COPY ./package.json ./
 COPY ./yarn.lock ./
 
+RUN yarn global add pm2
+
 
 RUN yarn install
 
 COPY . ./
 
+
 RUN yarn build
 
-ENTRYPOINT yarn start
+ENTRYPOINT pm2 start server.js --no-daemon -i 5
