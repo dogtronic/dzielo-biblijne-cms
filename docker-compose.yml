@@ -36,7 +36,7 @@ services:
     container_name: dzielobiblijne_mongodb
     environment:
       - MONGO_INITDB_ROOT_USERNAME=root
-      - MONGO_INITDB_ROOT_PASSWORD=$MONGO_ROOT_PASSWORD
+      - MONGO_INITDB_ROOT_PASSWORD=${MONGO_ROOT_PASSWORD}
     volumes:
       - /data/db/dzielobiblijne:/data/db
     networks:
