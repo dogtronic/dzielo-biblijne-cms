@@ -35,7 +35,8 @@
       "model": "regions"
     },
     "position": {
-      "type": "mappicker"
+      "type": "mappicker",
+      "columnType": "string"
     }
   }
 }

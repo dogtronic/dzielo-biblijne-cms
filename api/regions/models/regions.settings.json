@@ -17,10 +17,12 @@
       "required": true
     },
     "country": {
-      "type": "countrypicker"
+      "type": "countrypicker",
+      "columnType": "string"
     },
     "position": {
-      "type": "mappicker"
+      "type": "mappicker",
+      "columnType": "string"
     }
   }
 }
