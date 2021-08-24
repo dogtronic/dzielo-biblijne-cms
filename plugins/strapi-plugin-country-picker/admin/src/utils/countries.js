@@ -1224,14 +1224,6 @@ export const countries =  [
       "longitude" : 5.75
     },
 {
-      "country" : "Netherlands Antilles",
-      "alpha2" : "AN",
-      "alpha3" : "ANT",
-      "numeric" : 530,
-      "latitude" : 12.25,
-      "longitude" : -68.75
-    },
-{
       "country" : "New Caledonia",
       "alpha2" : "NC",
       "alpha3" : "NCL",

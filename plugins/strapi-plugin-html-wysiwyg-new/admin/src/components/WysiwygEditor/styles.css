@@ -53,6 +53,7 @@
 
 .rdw-option-wrapper {
   padding: 6px;
+  border: none;
 }
 
 .rdw-option-wrapper-img {
@@ -64,3 +65,28 @@
   padding: 0 15px;
   border: 1px solid #E3E9F3;
 }
+
+.rdw-dropdown-wrapper {
+  border: none;
+}
+
+.rdw-option-wrapper:hover {
+  box-shadow: none;
+  background-color: #E3E9F3;
+}
+
+.rdw-option-active {
+  box-shadow: none;
+  background-color: #E3E9F3;
+}
+
+.rdw-dropdown-wrapper:hover {
+  box-shadow: none;
+  background-color: #E3E9F3;
+}
+
+.rdw-colorpicker-option {
+  width: unset;
+  box-shadow: none;
+}
+

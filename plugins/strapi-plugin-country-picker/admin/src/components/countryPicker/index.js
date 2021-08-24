@@ -1,12 +1,15 @@
 import React, { useState} from 'react';
 import Select from 'react-select';
 import {countries} from '../../utils/countries';
+import {polishCountriesTranslations} from '../../utils/polishCountries';
+
+
 
 const CountryPicker = (props) => {
   const options = countries.map(v => ({
     value: v.alpha2,
-    label: v.country,
-  }))
+    label: polishCountriesTranslations[v.alpha2]?.name_pl,
+  })).sort((v,w) => v.label > w.label ? 1 : -1)
  
   return (
     <div>
@@ -28,7 +31,7 @@ const CountryPicker = (props) => {
           menuPortal: base => ({ ...base, zIndex: 9999 }),
           control: base => ({...base,  border: '1px solid #E3E9F3', height: '3.4rem' })
         }}
-        
+        placeholder="Wybierz..."
       />
     </div>
   );

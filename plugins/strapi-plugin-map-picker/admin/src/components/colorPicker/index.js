@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useLayoutEffect } from 'react';
 import { MapContainer, TileLayer, Marker} from '@monsonjeremy/react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import 'leaflet/dist/leaflet';
@@ -6,6 +6,7 @@ import {countries} from '../../utils/countries';
 import { useContentManagerEditViewDataManager } from 'strapi-helper-plugin'
 import markerIconPng from "leaflet/dist/images/marker-icon.png"
 import {Icon} from 'leaflet'
+import { prefixFileUrlWithBackendUrl } from "strapi-helper-plugin";
 
 const ColorPicker = (props) => {
   const markerRef = useRef(null);
@@ -47,11 +48,40 @@ const ColorPicker = (props) => {
     }
   }, [modifiedData.country]);
 
-  // useEffect(() => {
-  //   if(props.value) {
-  //     map.flyTo([position.lat, position.lng]);
-  //   }
-  // }, [props.value]);
+  useEffect(() => {
+    const navigateToRegion = async () => {
+      const response = await fetch(
+        prefixFileUrlWithBackendUrl(
+          `/regions/${modifiedData.region.id}`
+        )
+      );
+      const responseJSON = await response.json();
+
+      const position = JSON.parse(responseJSON.position);
+      map.flyTo([position.lat, position.lng]);
+      props.onChange({
+        target: {
+          value: JSON.stringify({lat:position.lat, lng: position.lng}),
+          name: props.name,
+          type: props.type
+        }
+      });
+    }
+    
+    if(modifiedData.region) {
+      navigateToRegion();
+    }
+  
+  }, [modifiedData.region]);
+  
+
+  useLayoutEffect(() => {
+    if(props.value) {
+      setTimeout(() => {
+        map?.flyTo([position.lat, position.lng], undefined, {animate: false});
+      }, 100)
+    }
+  }, [props.value, map]);
 
   return (
     <div id="mapid">
