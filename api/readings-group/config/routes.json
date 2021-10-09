@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/readings-groups",
+      "handler": "readings-group.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/readings-groups/count",
+      "handler": "readings-group.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/readings-groups/:id",
+      "handler": "readings-group.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/readings-groups",
+      "handler": "readings-group.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/readings-groups/:id",
+      "handler": "readings-group.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/readings-groups/:id",
+      "handler": "readings-group.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

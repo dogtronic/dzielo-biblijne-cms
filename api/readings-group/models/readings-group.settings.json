@@ -1,10 +1,9 @@
 {
   "kind": "collectionType",
-  "collectionName": "reading_types",
+  "collectionName": "readings_groups",
   "info": {
-    "name": "ReadingTypes",
-    "description": "",
-    "displayName": "Typy czytań"
+    "name": "ReadingsGroup",
+    "displayName": "Grupy czytań"
   },
   "options": {
     "increments": true,
@@ -15,12 +14,15 @@
   "attributes": {
     "name": {
       "type": "string",
-      "required": true,
-      "unique": true
+      "required": true
     },
-    "readings": {
-      "via": "reading_type",
-      "collection": "readings"
+    "visible_from": {
+      "type": "datetime",
+      "required": true
+    },
+    "visible_to": {
+      "type": "datetime",
+      "required": true
     },
     "image": {
       "model": "file",
@@ -32,17 +34,13 @@
       "required": false,
       "pluginOptions": {}
     },
-    "type": {
-      "type": "enumeration",
-      "enum": [
-        "Glowne",
-        "Poboczne",
-        "Ukryte"
-      ]
+    "photo": {
+      "model": "photos",
+      "via": "readings_groups"
     },
-    "priority": {
-      "type": "integer",
-      "default": 0
+    "readings": {
+      "collection": "readings",
+      "via": "readings_group"
     }
   }
 }

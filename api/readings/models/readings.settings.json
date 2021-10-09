@@ -43,6 +43,10 @@
     "sections": {
       "via": "reading",
       "collection": "sections"
+    },
+    "readings_group": {
+      "via": "readings",
+      "model": "readings-group"
     }
   }
 }

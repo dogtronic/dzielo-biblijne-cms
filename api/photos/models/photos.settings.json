@@ -37,6 +37,10 @@
     },
     "title": {
       "type": "string"
+    },
+    "readings_groups": {
+      "via": "photo",
+      "collection": "readings-group"
     }
   }
 }
