@@ -38,9 +38,10 @@
     "title": {
       "type": "string"
     },
-    "readings_groups": {
-      "via": "photo",
-      "collection": "readings-group"
+    "places": {
+      "via": "photos",
+      "collection": "places",
+      "dominant": true
     }
   }
 }

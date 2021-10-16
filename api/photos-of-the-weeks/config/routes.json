@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/photos-of-the-weeks",
+      "handler": "photos-of-the-weeks.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/photos-of-the-weeks/count",
+      "handler": "photos-of-the-weeks.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/photos-of-the-weeks/:id",
+      "handler": "photos-of-the-weeks.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/photos-of-the-weeks",
+      "handler": "photos-of-the-weeks.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/photos-of-the-weeks/:id",
+      "handler": "photos-of-the-weeks.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/photos-of-the-weeks/:id",
+      "handler": "photos-of-the-weeks.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

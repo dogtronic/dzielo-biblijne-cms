@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "photos_of_the_weeks",
+  "info": {
+    "name": "Photos of the weeks",
+    "displayName": "Zdjęcia tygodnia"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "image": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": true,
+      "pluginOptions": {}
+    },
+    "description": {
+      "type": "text"
+    },
+    "readings_groups": {
+      "collection": "readings-group",
+      "via": "photos_of_the_week"
+    }
+  }
+}

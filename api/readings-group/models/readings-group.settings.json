@@ -24,23 +24,13 @@
       "type": "datetime",
       "required": true
     },
-    "image": {
-      "model": "file",
-      "via": "related",
-      "allowedTypes": [
-        "images"
-      ],
-      "plugin": "upload",
-      "required": false,
-      "pluginOptions": {}
-    },
-    "photo": {
-      "model": "photos",
-      "via": "readings_groups"
-    },
     "readings": {
       "collection": "readings",
       "via": "readings_group"
+    },
+    "photos_of_the_week": {
+      "via": "readings_groups",
+      "model": "photos-of-the-weeks"
     }
   }
 }

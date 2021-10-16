@@ -17,16 +17,6 @@
       "type": "string",
       "required": true
     },
-    "photo": {
-      "collection": "file",
-      "via": "related",
-      "allowedTypes": [
-        "images"
-      ],
-      "plugin": "upload",
-      "required": true,
-      "pluginOptions": {}
-    },
     "description": {
       "type": "text",
       "required": true
@@ -37,6 +27,10 @@
     "position": {
       "type": "mappicker",
       "columnType": "string"
+    },
+    "photos": {
+      "via": "places",
+      "collection": "photos"
     }
   }
 }
