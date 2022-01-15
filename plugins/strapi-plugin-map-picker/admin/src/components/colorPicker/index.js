@@ -12,10 +12,13 @@ const ColorPicker = (props) => {
   const markerRef = useRef(null);
   const [map, setMap] = useState(null);
 
+  const [regionPosition, setRegionPosition] = useState('');
+
   const position = props.value ? JSON.parse(props.value) : {
     lat: 51.505,
     lng: -0.09,
   };
+
 
   const eventHandlers = {
     dragend: () => {
@@ -57,15 +60,18 @@ const ColorPicker = (props) => {
       );
       const responseJSON = await response.json();
 
-      const position = JSON.parse(responseJSON.position);
-      map.flyTo([position.lat, position.lng]);
-      props.onChange({
-        target: {
-          value: JSON.stringify({lat:position.lat, lng: position.lng}),
-          name: props.name,
-          type: props.type
-        }
-      });
+      if(responseJSON.position !== regionPosition){
+        setRegionPosition(responseJSON.position)
+        const position = JSON.parse(responseJSON.position);
+        map.flyTo([position.lat, position.lng]);
+        props.onChange({
+          target: {
+            value: JSON.stringify({lat:position.lat, lng: position.lng}),
+            name: props.name,
+            type: props.type
+          }
+        });
+      }
     }
     
     if(modifiedData.region) {
