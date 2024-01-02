@@ -4,7 +4,7 @@
   "info": {
     "name": "notifications",
     "description": "",
-    "displayName": "Ogłoszenia"
+    "displayName": "Aktualności"
   },
   "options": {
     "increments": true,
@@ -30,6 +30,10 @@
       "type": "integer",
       "default": 0,
       "private": true
+    },
+    "content_details": {
+      "type": "richtext",
+      "required": true
     }
   }
 }
