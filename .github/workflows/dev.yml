@@ -47,4 +47,4 @@ jobs:
           DATABASE_NAME: dzielobiblijne
           DATABASE_USERNAME: dzielobiblijne
           DATABASE_PASSWORD: ${{ secrets.DB_PASS }}
-          AUTH_DB: dzielobiblijne
+          AUTHENTICATION_DATABASE: dzielobiblijne
