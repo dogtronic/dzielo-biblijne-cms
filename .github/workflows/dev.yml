@@ -1,0 +1,50 @@
+name: Dev CD
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ['main']
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Login to Github Packages
+        uses: docker/login-action@v2
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GHCR_PAT }}
+      - name: Build image and push to GitHub Container Registry
+        uses: docker/build-push-action@v4
+        with:
+          context: .
+          tags: ghcr.io/dogtronic/dzielo-biblijne-dev:latest
+          push: ${{ github.ref == 'refs/heads/main' }}
+
+  deploy:
+    needs: build
+    runs-on: [self-hosted, DEV]
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Login to Github Packages
+        uses: docker/login-action@v2
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GHCR_PAT }}
+      - name: Pull and run Docker images
+        run: docker-compose pull && docker-compose up -d --force-recreate
+        env:
+          IMAGE: ghcr.io/dogtronic/dzielo-biblijne-dev
+          APP_PORT: 666
+          MEDIA_VOLUME_PATH: /data/dzielobiblijne/media
+          DB_VOLUME_PATH: /data/dzielobiblijne/db
+          MONGO_ROOT_PASSWORD: ${{ secrets.DB_ROOT_PASS }}
+          DATABASE_NAME: dzielobiblijne
+          DATABASE_USERNAME: dzielobiblijne
+          DATABASE_PASSWORD: ${{ secrets.DB_PASS }}
+          AUTH_DB: dzielobiblijne

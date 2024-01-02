@@ -1,18 +1,30 @@
-FROM strapi/base:12
+# FROM strapi/base:12
+
+# WORKDIR /src/app
+
+# COPY ./package.json ./
+# COPY ./yarn.lock ./
+
+# RUN yarn global add pm2
+
+
+# RUN yarn install
+
+# COPY . ./
+
+
+# RUN yarn build
+
+# ENTRYPOINT pm2 start server.js --no-daemon -i 5
+
+FROM node:12-alpine
 
 WORKDIR /src/app
 
-COPY ./package.json ./
-COPY ./yarn.lock ./
+COPY . .
 
-RUN yarn global add pm2
+RUN npm i --production && npm run build
 
+EXPOSE 1337
 
-RUN yarn install
-
-COPY . ./
-
-
-RUN yarn build
-
-ENTRYPOINT pm2 start server.js --no-daemon -i 5
+CMD ["node", "server.js"]
